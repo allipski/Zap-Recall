@@ -4,10 +4,11 @@ import Second from "./Second";
 import Third from "./Third";
 import Fourth from "./Fourth";
 
-export default function Flashcard({questionid, pergunta, resposta}) {
+export default function Flashcard({icon, setIcon, done, setDone, questionid, pergunta, resposta }) {
     const [contador, setContador] = React.useState(0);
-    const [icon, setIcon] = React.useState('');
     const [color, setColor] = React.useState('');
+ 
+
 
     if (contador === 0) {
         return (
@@ -24,12 +25,15 @@ export default function Flashcard({questionid, pergunta, resposta}) {
                 contador={contador}
                 setContador={setContador}
                 setIcon={setIcon}
+                icon={icon}
                 setColor={setColor}
+                done={done}
+                setDone={setDone}
             />
         )
     } else {
         return (
-            <Fourth questionid={questionid} color={color} icon={icon}/>
+            <Fourth questionid={questionid} color={color} icon={icon} />
         )
     }
 }
