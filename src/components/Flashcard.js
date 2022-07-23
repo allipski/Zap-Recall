@@ -1,39 +1,34 @@
-import React from "react"
-import turn from '../assets/images/turn.svg'
+import React from "react";
+import First from "./First";
+import Second from "./Second";
+import Third from "./Third";
+import Fourth from "./Fourth";
 
 export default function Flashcard() {
-    const [status, setStatus] = React.useState(0)
+    const [contador, setContador] = React.useState(0)
+    const [icon, setIcon] = React.useState('');
+    const [color, setColor] = React.useState('');
 
-    if (status === 0) {
+    if (contador === 0) {
         return (
-            <>
-                <div className="cardclosed" onClick={() => setStatus(status + 1)}>
-                    <p>Pergunta X</p>
-                    <ion-icon name="play-outline"></ion-icon>
-                </div>
-            </>
+            <First contador={contador} setContador={setContador} />
         )
-    } else if (status === 1) {
+    } else if (contador === 1) {
         return (
-            <>
-                <div className="cardopen" onClick={() => setStatus(status + 1)}>
-                    <p>Pergunta X</p>
-                    <img className="turn" src={turn} />
-                </div>
-            </>
+            <Second contador={contador} setContador={setContador} />
+        )
+    } else if (contador === 2) {
+        return (
+            <Third
+                contador={contador}
+                setContador={setContador}
+                setIcon={setIcon}
+                setColor={setColor}
+            />
         )
     } else {
         return (
-            <>
-                <div className="cardopen2" onClick={() => setStatus(status + 1)}>
-                    <p>Pergunta X</p>
-                    <div className="botoes">
-                        <button className="red">Não lembrei</button>
-                        <button className="orange">Quase não lembrei</button>
-                        <button className="green">Zap!</button>
-                    </div>
-                </div>
-            </>
+            <Fourth color={color} icon={icon}/>
         )
     }
 }
