@@ -4,22 +4,23 @@ import Second from "./Second";
 import Third from "./Third";
 import Fourth from "./Fourth";
 
-export default function Flashcard() {
-    const [contador, setContador] = React.useState(0)
+export default function Flashcard({questionid, pergunta, resposta}) {
+    const [contador, setContador] = React.useState(0);
     const [icon, setIcon] = React.useState('');
     const [color, setColor] = React.useState('');
 
     if (contador === 0) {
         return (
-            <First contador={contador} setContador={setContador} />
+            <First questionid={questionid} contador={contador} setContador={setContador} />
         )
     } else if (contador === 1) {
         return (
-            <Second contador={contador} setContador={setContador} />
+            <Second pergunta={pergunta} contador={contador} setContador={setContador} />
         )
     } else if (contador === 2) {
         return (
             <Third
+                resposta={resposta}
                 contador={contador}
                 setContador={setContador}
                 setIcon={setIcon}
@@ -28,7 +29,7 @@ export default function Flashcard() {
         )
     } else {
         return (
-            <Fourth color={color} icon={icon}/>
+            <Fourth questionid={questionid} color={color} icon={icon}/>
         )
     }
 }

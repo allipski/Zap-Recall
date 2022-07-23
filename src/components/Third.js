@@ -1,10 +1,8 @@
-import turn from '../assets/images/turn.svg'
-
-export default function Second({ contador, setContador, setIcon, setColor }) {
+export default function Second({ resposta, contador, setContador, setIcon, setColor }) {
     return (
         <>
             <div className="cardopen2">
-                <p>Pergunta X</p>
+                <p>{resposta}</p>
                 <div className="botoes">
                     <button onClick={() => { setContador(contador + 1); setColor("red1"); setIcon("close-circle") }} className="red">Não lembrei</button>
                     <button onClick={() => { setContador(contador + 1); setColor("orange1"); setIcon("help-circle") }} className="orange">Quase não lembrei</button>

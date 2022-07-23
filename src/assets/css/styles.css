@@ -137,6 +137,7 @@ h1 {
     font-weight: 400;
     font-size: 16px;
     position: relative;
+    line-height: 22px;
 }
 .cardopen2 {
     background-color: #FFFFD4;
@@ -152,6 +153,7 @@ h1 {
     font-weight: 400;
     font-size: 16px;
     position: relative;
+    line-height: 22px;
 }
 
 .botoes {
