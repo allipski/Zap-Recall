@@ -23,7 +23,7 @@ export default function Telaflash() {
                         setSeq={setSeq}
                         done={done} 
                         setDone={setDone} 
-                        questionid={index} 
+                        questionid={index + 1} 
                         pergunta={arr.pergunta} 
                         resposta={arr.resposta} 
                         key={index} 
