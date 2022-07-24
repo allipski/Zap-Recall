@@ -303,11 +303,24 @@ h1 {
     gap: 12px;
 }
 
-.final p{
+.final p {
     font-weight: 700;
 }
 
-.msg > p {
+.msg>p {
     text-align: center;
     margin: 10px 0;
+}
+
+@media only screen and (min-width: 500px) {
+
+.master,
+.master2 {
+    width: 50%;
+}
+
+.logo {
+    width: 25%
+}
+
 }
