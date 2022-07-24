@@ -1,4 +1,4 @@
-export default function Second({questionid, color, icon}) {
+export default function Fourth({ questionid, color, icon }) {
     return (
         <>
             <div className={`cardclosed2 ${color}`}>

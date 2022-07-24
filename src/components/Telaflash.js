@@ -6,9 +6,8 @@ import { arr } from '../data/Deck';
 import shuffleArray from '../data/Deck';
 
 export default function Telaflash() {
-
     const [done, setDone] = React.useState(0);
-    const [icon, setIcon] = React.useState('');
+    const [seq, setSeq] = React.useState([]);
 
     return (
         <div className="aligning">
@@ -18,9 +17,19 @@ export default function Telaflash() {
                     <h1>ZapRecall</h1>
                 </div>
                 <div className="cards">
-                    {shuffleArray(arr).map((arr, index) => <Flashcard icon={icon} setIcon={setIcon} done={done} setDone={setDone} questionid={index} pergunta={arr.pergunta} resposta={arr.resposta} key={index} />)}
+                    {shuffleArray(arr).map((arr, index) => 
+                    <Flashcard 
+                        seq={seq}
+                        setSeq={setSeq}
+                        done={done} 
+                        setDone={setDone} 
+                        questionid={index} 
+                        pergunta={arr.pergunta} 
+                        resposta={arr.resposta} 
+                        key={index} 
+                    />)}
                 </div>
-                <Bottombar done={done} />
+                <Bottombar seq={seq} done={done}/>
             </div>
         </div>
     )
