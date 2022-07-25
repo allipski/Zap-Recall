@@ -5,10 +5,12 @@ import Bottombar from './Bottombar';
 import { arr } from '../data/Deck';
 import shuffleArray from '../data/Deck';
 
+const shuffled = shuffleArray(arr);
+
 export default function Telaflash() {
     const [done, setDone] = React.useState(0);
     const [seq, setSeq] = React.useState([]);
-
+    
     return (
         <div className="aligning">
             <div className="master2">
@@ -17,7 +19,7 @@ export default function Telaflash() {
                     <h1>ZapRecall</h1>
                 </div>
                 <div className="cards">
-                    {shuffleArray(arr).map((arr, index) => 
+                    {shuffled.map((arr, index) => 
                     <Flashcard 
                         seq={seq}
                         setSeq={setSeq}
